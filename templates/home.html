@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Flask Web App</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+<body>
+
+<h1>Survival Classification</h1>
+<p> Please fill in the values below to estimate if you are able to survive the sinking of the Titanic or not.</p>
+
+<form action="/result" method="POST">
+    <label>Ticket class:  </label>
+    <select name='Pclass'>
+        <option value =1 >1</option>
+        <option value =2 >2</option>
+        <option value =3 >3</option>
+    </select>
+
+    <br>
+    <label>Age:</label>
+    <input type="text" name="Age">
+    <br>
+    <label>number of siblings/spouses aboard the Titanic with you</label>
+    <input type="text" name="sibsp">
+    <br>
+    <label>number of parent/children aboard the Titanic with you</label>
+    <input type="text" name="parch">
+    <br>
+    <label>Passenger fare</label>
+    <input type="text" name="fare">
+    <br>
+    <label>Gender: 1=male 0=female</label>
+    <select name='Sex'>
+        <option value=1>Male</option>
+        <option value=0>Female</option>
+    </select>
+    <br>
+    
+    <label>Port of Embarkation (Queenstown?)</label>
+    <select name='Q'>
+        <option value=1>yes</option>
+        <option value=0>no</option>
+    </select>
+    <br>
+    <label>Port of Embarkation (Southampton?)</label>
+    <select name='S'>
+        <option value=1>yes</option>
+        <option value=0>no</option>
+    </select>
+    <br>
+    <input type="submit" value="Submit">
+
+
+</form>
+
+</body>
+</html>
